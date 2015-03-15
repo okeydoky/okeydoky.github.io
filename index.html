@@ -7,14 +7,13 @@
     <meta name="author" content=" FILL ME IN ">
     <title>Cameron Pittman: Portfolio</title>
 
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/print.css" rel="stylesheet" media="print">
     <style>
-      @media only screen and (max-width: 480px) {
-        body { font-size: 12px;}
-        header p { padding-left: 4.5em;}
-      }
+      body { margin: 0; font-size: 14px; line-height: 1.61; font-weight: 400; background: #fff;
+       font-family: 'Open Sans', sans-serif; color: #333; }
     </style>
+    <!-- <link href="css/style.css" rel="stylesheet"> -->
+    <link href="css/print.css" rel="stylesheet" media="print">
+
     <script async src="js/analytic.js"></script>
     <script async src="http://www.google-analytics.com/analytics.js"></script>
     <script async src="js/perfmatters.js"></script>
@@ -62,5 +61,16 @@
     <footer>
       <p>&copy; Web Performance 2014 <span id="crp-stats"></span></p>
     </footer>
+    <script>
+      var cb = function() {
+        var l = document.createElement('link'); l.rel = 'stylesheet';
+        l.href = 'css/style.css';
+        var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
+      };
+      var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+          webkitRequestAnimationFrame || msRequestAnimationFrame;
+      if (raf) raf(cb);
+      else window.addEventListener('load', cb);
+    </script>
   </body>
 </html>
